@@ -79,6 +79,27 @@ This project shows how a classic 32-bit **MIPS -Multicycle-Processor**
 |              | `10` | PC input = **JumpAddr** (`{PC[31:28], instr[25:0]<<2}`) |
 
 
+The CPU walks through **13 states (0 → 12)**.
+
+| State Name | # | Purpose / Action | Control signals asserted (`1` unless noted) |
+|------------|---|------------------|---------------------------------------------|
+| **FETCH** | 0  | Fetch instruction from memory, PC ← PC+4 | `MemRead  IRWrite  PCWrite` / `ALUSrcA=0` `ALUSrcB=01` `ALUOp=00` `PCSource=00` |
+| **DECODE** | 1  | Decode, sign/zero-extend imm, load **A/B** regs | `ALUSrcA=0` `ALUSrcB=11` `ALUOp=00` `A_Load  B_Load` + `ExtSel=0` (*sltiu*) or `1` |
+| **MEM_ADDR** | 2 | Compute address for `lw / lhu / sw` | `ALUSrcA` `ALUSrcB=10` `ALUOp=00` |
+| **MEM_READ** | 3 | Read data memory (`lw / lhu`) | `MemRead  IorD` + `MemHalf` (*only if lhu*) |
+| **MEM_WRITEBACK** | 4 | Write loaded word/half to RegFile | `RegWrite  MemtoReg` (`RegDst=0`) |
+| **MEM_WRITE** | 5 | Store word/half (`sw`) to memory| `MemWrite  IorD` |
+| **EXECUTE** | 6 | R-type ALU op (`add, sub, and, or, slt, srl`) | `ALUSrcA` `ALUSrcB=00` `ALUOp=10` |
+| **ALU_WRITEBACK** | 7 | Write ALU result to RegFile (R-type) | `RegDst=1  RegWrite` |
+| **BRANCH** | 8 | Evaluate `beq / bne`, conditionally PC ← BranchTarget | `ALUSrcA` `ALUSrcB=00` `ALUOp=01` `PCSource=01` `PCWriteCond` (`Bne` if `bne`) |
+| **JUMP** | 9 | Unconditional jump (`j`) | `PCWrite` `PCSource=10` |
+| **JAL_WRITE_RA** | 10 | `$ra` ← PC+4, then jump (`jal`) | `Jal  RegWrite  PCWrite  PCSource=10` |
+| **SLTIU_EXECUTE** | 11 | Unsigned compare (`sltiu`) | `ALUSrcA` `ALUSrcB=10` `ALUOp=11` |
+| **SLTIU_WRITEBACK** | 12 | Write result of `sltiu` | `RegWrite` (`RegDst=0`) |
+
+
+
+
 
 ---
 
