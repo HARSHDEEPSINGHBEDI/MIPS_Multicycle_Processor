@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="multi_cycle_processor_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="multi_cycle_processor_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="114.401 ns"></ZoomEndTime>
+      <Cursor1Time time="0.005 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="258"></NameColumnWidth>
+      <ValueColumnWidth column_width="134"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="140" />
+   <wvobject fp_name="/multi_cycle_processor_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/prev_state" type="array">
+      <obj_property name="ElementShortName">prev_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC/pc_write" type="logic">
+      <obj_property name="ElementShortName">pc_write</obj_property>
+      <obj_property name="ObjectShortName">pc_write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC/pc_in" type="array">
+      <obj_property name="ElementShortName">pc_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ADDR_MUX/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ADDR_MUX/aluoutreg" type="array">
+      <obj_property name="ElementShortName">aluoutreg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutreg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ADDR_MUX/IorD" type="logic">
+      <obj_property name="ElementShortName">IorD</obj_property>
+      <obj_property name="ObjectShortName">IorD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ADDR_MUX/address_out" type="array">
+      <obj_property name="ElementShortName">address_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">address_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/MemRead" type="logic">
+      <obj_property name="ElementShortName">MemRead</obj_property>
+      <obj_property name="ObjectShortName">MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/MemWrite" type="logic">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/mem_mode" type="array">
+      <obj_property name="ElementShortName">mem_mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/address" type="array">
+      <obj_property name="ElementShortName">address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/Data" type="array">
+      <obj_property name="ElementShortName">Data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/mem_data_out" type="array">
+      <obj_property name="ElementShortName">mem_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEM/memory" type="array">
+      <obj_property name="ElementShortName">memory[0:255][31:0]</obj_property>
+      <obj_property name="ObjectShortName">memory[0:255][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/IRWrite" type="logic">
+      <obj_property name="ElementShortName">IRWrite</obj_property>
+      <obj_property name="ObjectShortName">IRWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/mem_data_out" type="array">
+      <obj_property name="ElementShortName">mem_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/opcode" type="array">
+      <obj_property name="ElementShortName">opcode[5:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/funct" type="array">
+      <obj_property name="ElementShortName">funct[5:0]</obj_property>
+      <obj_property name="ObjectShortName">funct[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/rs" type="array">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/rt" type="array">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/rd" type="array">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/shamt" type="array">
+      <obj_property name="ElementShortName">shamt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">shamt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/imm" type="array">
+      <obj_property name="ElementShortName">imm[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/instr_reg/address" type="array">
+      <obj_property name="ElementShortName">address[25:0]</obj_property>
+      <obj_property name="ObjectShortName">address[25:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MDR_reg/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MDR_reg/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MDR_reg/mem_data_out" type="array">
+      <obj_property name="ElementShortName">mem_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MDR_reg/MDR_out" type="array">
+      <obj_property name="ElementShortName">MDR_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MDR_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/RegWrite" type="logic">
+      <obj_property name="ElementShortName">RegWrite</obj_property>
+      <obj_property name="ObjectShortName">RegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/rs" type="array">
+      <obj_property name="ElementShortName">rs[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/rt" type="array">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/write_reg" type="array">
+      <obj_property name="ElementShortName">write_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">write_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/write_data" type="array">
+      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/read_data1" type="array">
+      <obj_property name="ElementShortName">read_data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/read_data2" type="array">
+      <obj_property name="ElementShortName">read_data2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/registers" type="array">
+      <obj_property name="ElementShortName">registers[0:31][31:0]</obj_property>
+      <obj_property name="ObjectShortName">registers[0:31][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGFILE/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/A_register/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/A_register/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/A_register/A_Load" type="logic">
+      <obj_property name="ElementShortName">A_Load</obj_property>
+      <obj_property name="ObjectShortName">A_Load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/A_register/read_data1" type="array">
+      <obj_property name="ElementShortName">read_data1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/A_register/A_out" type="array">
+      <obj_property name="ElementShortName">A_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/B_register/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/B_register/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/B_register/B_Load" type="logic">
+      <obj_property name="ElementShortName">B_Load</obj_property>
+      <obj_property name="ObjectShortName">B_Load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/B_register/read_data2" type="array">
+      <obj_property name="ElementShortName">read_data2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/B_register/B_out" type="array">
+      <obj_property name="ElementShortName">B_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SE/imm" type="array">
+      <obj_property name="ElementShortName">imm[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imm[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SE/ExtSel" type="logic">
+      <obj_property name="ElementShortName">ExtSel</obj_property>
+      <obj_property name="ObjectShortName">ExtSel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SE/imm_ext" type="array">
+      <obj_property name="ElementShortName">imm_ext[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_ext[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_BRANCH/imm_ext" type="array">
+      <obj_property name="ElementShortName">imm_ext[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_ext[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_BRANCH/shift_left" type="array">
+      <obj_property name="ElementShortName">shift_left[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_left[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_JUMP/address" type="array">
+      <obj_property name="ElementShortName">address[25:0]</obj_property>
+      <obj_property name="ObjectShortName">address[25:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_JUMP/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_JUMP/jump_address" type="array">
+      <obj_property name="ElementShortName">jump_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jump_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/SHIFT_JUMP/shifted_address" type="array">
+      <obj_property name="ElementShortName">shifted_address[27:0]</obj_property>
+      <obj_property name="ObjectShortName">shifted_address[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_A_MUX/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_A_MUX/A_out" type="array">
+      <obj_property name="ElementShortName">A_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_A_MUX/ALUSrcA" type="logic">
+      <obj_property name="ElementShortName">ALUSrcA</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_A_MUX/alu_src_a_out" type="array">
+      <obj_property name="ElementShortName">alu_src_a_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_src_a_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/B_out" type="array">
+      <obj_property name="ElementShortName">B_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/imm_ext" type="array">
+      <obj_property name="ElementShortName">imm_ext[31:0]</obj_property>
+      <obj_property name="ObjectShortName">imm_ext[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/shift_left" type="array">
+      <obj_property name="ElementShortName">shift_left[31:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_left[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/const_4" type="array">
+      <obj_property name="ElementShortName">const_4[31:0]</obj_property>
+      <obj_property name="ObjectShortName">const_4[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/ALUSrcB" type="array">
+      <obj_property name="ElementShortName">ALUSrcB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcB[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_SRC_B_MUX/alu_src_b_out" type="array">
+      <obj_property name="ElementShortName">alu_src_b_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_src_b_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_CTRL/ALUOp" type="array">
+      <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_CTRL/funct" type="array">
+      <obj_property name="ElementShortName">funct[5:0]</obj_property>
+      <obj_property name="ObjectShortName">funct[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_CTRL/ALU_control" type="array">
+      <obj_property name="ElementShortName">ALU_control[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_control[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU/alu_src_a_out" type="array">
+      <obj_property name="ElementShortName">alu_src_a_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_src_a_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU/alu_src_b_out" type="array">
+      <obj_property name="ElementShortName">alu_src_b_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_src_b_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU/ALU_control" type="array">
+      <obj_property name="ElementShortName">ALU_control[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_control[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU/ALUOut" type="array">
+      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU/Zero" type="logic">
+      <obj_property name="ElementShortName">Zero</obj_property>
+      <obj_property name="ObjectShortName">Zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_OUT_REG/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_OUT_REG/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_OUT_REG/ALUOut" type="array">
+      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/ALU_OUT_REG/aluoutreg" type="array">
+      <obj_property name="ElementShortName">aluoutreg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutreg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGDST_MUX/RegDst" type="array">
+      <obj_property name="ElementShortName">RegDst[1:0]</obj_property>
+      <obj_property name="ObjectShortName">RegDst[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGDST_MUX/rt" type="array">
+      <obj_property name="ElementShortName">rt[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGDST_MUX/rd" type="array">
+      <obj_property name="ElementShortName">rd[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/REGDST_MUX/write_reg" type="array">
+      <obj_property name="ElementShortName">write_reg[4:0]</obj_property>
+      <obj_property name="ObjectShortName">write_reg[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEMTOREG_MUX/MemtoReg" type="logic">
+      <obj_property name="ElementShortName">MemtoReg</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEMTOREG_MUX/alu_out_reg" type="array">
+      <obj_property name="ElementShortName">alu_out_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_out_reg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEMTOREG_MUX/MDR_out" type="array">
+      <obj_property name="ElementShortName">MDR_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MDR_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/MEMTOREG_MUX/write_data" type="array">
+      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC_SRC_MUX/PCSource" type="array">
+      <obj_property name="ElementShortName">PCSource[1:0]</obj_property>
+      <obj_property name="ObjectShortName">PCSource[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC_SRC_MUX/ALUOut" type="array">
+      <obj_property name="ElementShortName">ALUOut[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOut[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC_SRC_MUX/aluoutreg" type="array">
+      <obj_property name="ElementShortName">aluoutreg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluoutreg[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC_SRC_MUX/jump_address" type="array">
+      <obj_property name="ElementShortName">jump_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jump_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/PC_SRC_MUX/pc_in" type="array">
+      <obj_property name="ElementShortName">pc_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/opcode" type="array">
+      <obj_property name="ElementShortName">opcode[5:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/zero" type="logic">
+      <obj_property name="ElementShortName">zero</obj_property>
+      <obj_property name="ObjectShortName">zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/PCWrite" type="logic">
+      <obj_property name="ElementShortName">PCWrite</obj_property>
+      <obj_property name="ObjectShortName">PCWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/PCWriteCond" type="logic">
+      <obj_property name="ElementShortName">PCWriteCond</obj_property>
+      <obj_property name="ObjectShortName">PCWriteCond</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/IorD" type="logic">
+      <obj_property name="ElementShortName">IorD</obj_property>
+      <obj_property name="ObjectShortName">IorD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MemRead" type="logic">
+      <obj_property name="ElementShortName">MemRead</obj_property>
+      <obj_property name="ObjectShortName">MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MemWrite" type="logic">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/IRWrite" type="logic">
+      <obj_property name="ElementShortName">IRWrite</obj_property>
+      <obj_property name="ObjectShortName">IRWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MemtoReg" type="logic">
+      <obj_property name="ElementShortName">MemtoReg</obj_property>
+      <obj_property name="ObjectShortName">MemtoReg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/RegDst" type="logic">
+      <obj_property name="ElementShortName">RegDst</obj_property>
+      <obj_property name="ObjectShortName">RegDst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/RegWrite" type="logic">
+      <obj_property name="ElementShortName">RegWrite</obj_property>
+      <obj_property name="ObjectShortName">RegWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/ALUSrcA" type="logic">
+      <obj_property name="ElementShortName">ALUSrcA</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/ALUSrcB" type="array">
+      <obj_property name="ElementShortName">ALUSrcB[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUSrcB[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/ALUOp" type="array">
+      <obj_property name="ElementShortName">ALUOp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUOp[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/PCSource" type="array">
+      <obj_property name="ElementShortName">PCSource[1:0]</obj_property>
+      <obj_property name="ObjectShortName">PCSource[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/ExtSel" type="logic">
+      <obj_property name="ElementShortName">ExtSel</obj_property>
+      <obj_property name="ObjectShortName">ExtSel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MemHalf" type="logic">
+      <obj_property name="ElementShortName">MemHalf</obj_property>
+      <obj_property name="ObjectShortName">MemHalf</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/Bne" type="logic">
+      <obj_property name="ElementShortName">Bne</obj_property>
+      <obj_property name="ObjectShortName">Bne</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/Jal" type="logic">
+      <obj_property name="ElementShortName">Jal</obj_property>
+      <obj_property name="ObjectShortName">Jal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/A_Load" type="logic">
+      <obj_property name="ElementShortName">A_Load</obj_property>
+      <obj_property name="ObjectShortName">A_Load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/B_Load" type="logic">
+      <obj_property name="ElementShortName">B_Load</obj_property>
+      <obj_property name="ObjectShortName">B_Load</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/state" type="array">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/next_state" type="array">
+      <obj_property name="ElementShortName">next_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/FETCH" type="array">
+      <obj_property name="ElementShortName">FETCH[3:0]</obj_property>
+      <obj_property name="ObjectShortName">FETCH[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/DECODE" type="array">
+      <obj_property name="ElementShortName">DECODE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">DECODE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MEM_ADDR" type="array">
+      <obj_property name="ElementShortName">MEM_ADDR[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_ADDR[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MEM_READ" type="array">
+      <obj_property name="ElementShortName">MEM_READ[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_READ[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MEM_WRITEBACK" type="array">
+      <obj_property name="ElementShortName">MEM_WRITEBACK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_WRITEBACK[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/MEM_WRITE" type="array">
+      <obj_property name="ElementShortName">MEM_WRITE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">MEM_WRITE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/EXECUTE" type="array">
+      <obj_property name="ElementShortName">EXECUTE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">EXECUTE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/ALU_WRITEBACK" type="array">
+      <obj_property name="ElementShortName">ALU_WRITEBACK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALU_WRITEBACK[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/BRANCH" type="array">
+      <obj_property name="ElementShortName">BRANCH[3:0]</obj_property>
+      <obj_property name="ObjectShortName">BRANCH[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/JUMP" type="array">
+      <obj_property name="ElementShortName">JUMP[3:0]</obj_property>
+      <obj_property name="ObjectShortName">JUMP[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/JAL_WRITE_RA" type="array">
+      <obj_property name="ElementShortName">JAL_WRITE_RA[3:0]</obj_property>
+      <obj_property name="ObjectShortName">JAL_WRITE_RA[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/SLTIU_EXECUTE" type="array">
+      <obj_property name="ElementShortName">SLTIU_EXECUTE[3:0]</obj_property>
+      <obj_property name="ObjectShortName">SLTIU_EXECUTE[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/multi_cycle_processor_tb/uut/FSM/SLTIU_WRITEBACK" type="array">
+      <obj_property name="ElementShortName">SLTIU_WRITEBACK[3:0]</obj_property>
+      <obj_property name="ObjectShortName">SLTIU_WRITEBACK[3:0]</obj_property>
+   </wvobject>
+</wave_config>

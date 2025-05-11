@@ -1,0 +1,27 @@
+0.7
+2020.2
+Nov  8 2024
+22:36:57
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.sim/sim_1/behav/xsim/glbl.v,1724786425,verilog,,,,glbl,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sim_1/new/tb.v,1746568106,verilog,,,,multi_cycle_processor_tb,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/SA.v,1746981856,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/c.v,,alu_control,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/c.v,1746981052,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/g.v,,IR,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/g.v,1746981188,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ghj.v,,MDR,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ghj.v,1746567964,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/io.v,,pc_source_mux,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/io.v,1746567990,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/jh.v,,control_fsm,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/jh.v,1746567939,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/k.v,,memtoreg_mux,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/k.v,1746567730,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ll.v,,shift_left_2,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ll.v,1746567750,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/llo.v,,shift_left_2_jump,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/llo.v,1746567885,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/o.v,,alu_out_reg,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/o.v,1746567707,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/p.v,,sign_ext,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/p.v,1746567680,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/pc.v,,B_reg,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/pc.v,1746567530,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/r.v,,pc,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/r.v,1746567639,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/rd.v,,reg_file,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/rd.v,1746567913,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/s.v,,regdst_mux,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/s.v,1746567548,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/sd.v,,mux_pc_alu,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/sd.v,1746567857,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/top.v,,alu,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/top.v,1746568020,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/u.v,,multi_cycle_processor,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/u.v,1746567660,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/v.v,,A_reg,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/v.v,1746567575,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/y.v,,memory,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/y.v,1746567808,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/yy.v,,alusrcb_mux,,,,,,,,
+D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/yy.v,1746567770,verilog,,D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sim_1/new/tb.v,,AlusrcA_mux,,,,,,,,

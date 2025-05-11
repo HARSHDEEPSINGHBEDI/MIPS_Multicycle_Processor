@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Mips_Multicycle.srcs/sources_1/new/SA.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/c.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/g.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/ghj.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/io.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/jh.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/k.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/ll.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/llo.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/o.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/p.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/pc.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/r.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/rd.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/s.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/sd.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/top.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/u.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/v.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/y.v" \
+"../../../../Mips_Multicycle.srcs/sources_1/new/yy.v" \
+"../../../../Mips_Multicycle.srcs/sim_1/new/tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,35 @@
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/Vivado-25/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot multi_cycle_processor_tb_behav xil_defaultlib.multi_cycle_processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.mux_pc_alu
+Compiling module xil_defaultlib.memory
+Compiling module xil_defaultlib.IR
+Compiling module xil_defaultlib.MDR
+Compiling module xil_defaultlib.reg_file
+Compiling module xil_defaultlib.A_reg
+Compiling module xil_defaultlib.B_reg
+Compiling module xil_defaultlib.sign_ext
+Compiling module xil_defaultlib.shift_left_2
+Compiling module xil_defaultlib.shift_left_2_jump
+Compiling module xil_defaultlib.AlusrcA_mux
+Compiling module xil_defaultlib.alusrcb_mux
+Compiling module xil_defaultlib.alu_control
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.alu_out_reg
+Compiling module xil_defaultlib.regdst_mux
+Compiling module xil_defaultlib.memtoreg_mux
+Compiling module xil_defaultlib.pc_source_mux
+Compiling module xil_defaultlib.control_fsm
+Compiling module xil_defaultlib.multi_cycle_processor
+Compiling module xil_defaultlib.multi_cycle_processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot multi_cycle_processor_tb_behav

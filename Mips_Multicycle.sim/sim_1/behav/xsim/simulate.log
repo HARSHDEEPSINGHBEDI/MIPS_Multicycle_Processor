@@ -1,0 +1,136 @@
+Time resolution is 1 ps
+
+==== Multicycle MIPS Processor Test ====
+
+Loaded Instructions:
+  memory[0] = 0x01095020
+  memory[1] = 0x01095822
+  memory[2] = 0x01096024
+  memory[3] = 0x01096825
+  memory[4] = 0x2d0a0001
+  memory[5] = 0xad0b0004
+  memory[6] = 0x8d0c0004
+  memory[7] = 0x0109702a
+  memory[8] = 0x950c0002
+  memory[9] = 0x11090002
+  memory[10] = 0x15090002
+  memory[11] = 0x0c00000d
+  memory[12] = 0x0800000c
+  memory[13] = 0xxxxxxxxx
+
+[Instr Done @ 15000 ns] | PC = 0 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 55000 ns] | PC = 4 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 95000 ns] | PC = 8 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 135000 ns] | PC = 12 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 175000 ns] | PC = 16 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 215000 ns] | PC = 20 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 255000 ns] | PC = 24 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 305000 ns] | PC = 28 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 345000 ns] | PC = 32 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 395000 ns] | PC = 36 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 425000 ns] | PC = 40 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 455000 ns] | PC = 52 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 475000 ns] | PC = 56 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 495000 ns] | PC = 60 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 515000 ns] | PC = 64 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 535000 ns] | PC = 68 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 555000 ns] | PC = 72 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 575000 ns] | PC = 76 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 595000 ns] | PC = 80 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 615000 ns] | PC = 84 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 635000 ns] | PC = 88 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 655000 ns] | PC = 92 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 675000 ns] | PC = 96 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 695000 ns] | PC = 100 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 715000 ns] | PC = 104 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 735000 ns] | PC = 108 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 755000 ns] | PC = 112 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 775000 ns] | PC = 116 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 795000 ns] | PC = 120 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 815000 ns] | PC = 124 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 835000 ns] | PC = 128 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 855000 ns] | PC = 132 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 875000 ns] | PC = 136 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 895000 ns] | PC = 140 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 915000 ns] | PC = 144 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 935000 ns] | PC = 148 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 955000 ns] | PC = 152 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 975000 ns] | PC = 156 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz
+
+[Instr Done @ 995000 ns] | PC = 160 | Instruction = 0xzzzzzzzz
+   [UNKNOWN OPCODE] = zzzzzz

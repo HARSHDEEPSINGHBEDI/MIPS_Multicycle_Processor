@@ -1,0 +1,17 @@
+01095020    // add $t2, $t0, $t1       $t2 = $t0 + $t1
+01095822    // sub $t3, $t0, $t1       $t3 = $t0 - $t1
+01096024    // and $t4, $t0, $t1       $t4 = $t0 & $t1
+01096825    // or  $t5, $t0, $t1       $t5 = $t0 | $t1
+2D0A0001    // sltiu $t2, $t0, 1       $t2 = ($t0 < 1) ? 1 : 0 (unsigned)                       
+AD0B0004    // sw  $t3, 4($t0)         Memory[$t0 + 4] = $t3                      
+8D0C0004    // lw  $t4, 4($t0)         $t4 = Memory[$t0 + 4]
+0109702A    // slt $t6, $t0, $t1       $t6 = ($t0 < $t1) ? 1 : 0
+
+950C0002    // lhu $t4, 2($t0)         $t4 = zero-extended MEM[$t0 + 2] (16-bit load)
+11090002    // beq $t0, $t1, +2        if ($t0 == $t1) PC += 8 
+15090002    // bne $t0, $t1, +2        if ($t0 != $t1) PC += 8 
+
+0C00000D    // jal 0x0000000D          $ra = PC+4, PC = 0x0000000D
+
+
+0800000C    // j   0x0000000C          PC = 0x0000000C

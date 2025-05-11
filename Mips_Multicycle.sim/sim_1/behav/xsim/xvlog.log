@@ -1,0 +1,44 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/SA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/c.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IR
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/g.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MDR
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ghj.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_source_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/io.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_fsm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/jh.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memtoreg_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/k.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift_left_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/ll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift_left_2_jump
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/llo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_out_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/o.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sign_ext
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/p.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module B_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/r.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/rd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regdst_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_pc_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/sd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multi_cycle_processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/u.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module A_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/v.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/y.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alusrcb_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sources_1/new/yy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AlusrcA_mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado-25/Mips_Multicycle/Mips_Multicycle.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module multi_cycle_processor_tb
