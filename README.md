@@ -1,113 +1,92 @@
 # MIPS Multicycle Processor – Easy Guide 👋
 
-Welcome!   
-This is Harshdeep Singh
-
-This project shows how a classic 32-bit **MIPS -Multicycle-Processor**
+Welcome!  
+I’m **Harshdeep Singh**, and this repo demonstrates a 32-bit **MIPS Multicycle Processor**—one ALU, one memory port, 13 control states.
 
 ---
 
-## 📁 Folder Map (what’s where)
+## 📁 Folder Map
 
-| Folder / file | What it is |
-|---------------|------------|
-| **src/**      | All Verilog modules that make the CPU work |
-| **tb/**       | Testbench + `program.mem` (the code the CPU will run) |
-| **docs/img/** |  Datapath and the control FSM |
-| **MIPS_Multicycle.xpr** | *Optional* Vivado project if you like GUIs |
-| **README.md** | This file |
+| Path | Contents |
+|------|----------|
+| **src/** | All synthesizable Verilog modules |
+| **tb/** | Test-bench &nbsp;+&nbsp;`program.mem` sample program |
+| **docs/img/** | Architecture figures (datapath & FSM) |
+| **MIPS_Multicycle.xpr** | *(optional)* Vivado project |
+| **README.md** | You’re reading it |
 
 ---
 
-## 🖼️ How the CPU Looks
+## 🖼️ Architecture Diagrams
 
-### 1.  Datapath (wires & boxes)
+### Datapath
 
 ![Multicycle Datapath](docs/img/datatapath.png)
 
+*Blue = data* | *Orange = control*
 
-
-
-*Blue* lines are data.  
-*Orange* arrows are control signals.  
-
-
-### 2.  Control FSM (the brain)
+### Control FSM
 
 ![Control FSM](docs/img/control_fsm.png)
 
+---
 
 ## 🎛️ Control-Signal Reference
 
-### 1-bit Control Signals
+### 1-bit Signals
 
-| Signal | **0** (de-asserted) | **1** (asserted) |
-|--------|---------------------|------------------|
-| **RegDst**   | Destination reg = **rt** (`instr[20:16]`) | Destination reg = **rd** (`instr[15:11]`) |
-| **RegWrite** | No register write | Register file **write-enable** |
-| **ALUSrcA**  | ALU input-A = **PC** | ALU input-A = **A** register |
-| **MemRead**  | No memory read | Memory **read** at `Addr` |
-| **MemWrite** | No memory write | Memory **write** at `Addr` |
-| **MemtoReg** | RegWrite data = **ALUOut** | RegWrite data = **MDR** |
-| **IorD**     | Memory address = **PC** (instr fetch) | Memory address = **ALUOut** (data) |
-| **IRWrite**  | Don’t load `IR` | Load instruction into **IR** |
-| **PCWrite**  | Don’t update PC | **PC ← PC_in** (unconditional) |
-| **PCWriteCond** | No branch | Update PC **if `Zero` / `~Zero`** |
-| **ExtSel**   | Zero-extend imm (for `sltiu`) | Sign-extend imm |
-| **MemHalf**  | Access **word** | Access **half-word** (`lhu`) |
-| **Bne**      | Compare **equal** (`beq`) | Compare **not equal** (`bne`) |
-| **Jal**      | Normal write-back | `$ra ← PC+4` and jump |
-| **A_Load**   | Hold old **A** | Latch **A ← Reg[rs]** |
-| **B_Load**   | Hold old **B** | Latch **B ← Reg[rt]** |
+| Signal | **0** | **1** |
+|--------|-------|-------|
+| **RegDst** | Dest reg = `rt` | Dest reg = `rd` |
+| **RegWrite** | No RF write | Register-file **write** |
+| **ALUSrcA** | ALU A = `PC` | ALU A = `A` reg |
+| **MemRead** | No read | Memory **read** |
+| **MemWrite** | No write | Memory **write** |
+| **MemtoReg** | WB data = `ALUOut` | WB data = `MDR` |
+| **IorD** | Addr = `PC` | Addr = `ALUOut` |
+| **IRWrite** | Hold IR | Load instruction into IR |
+| **PCWrite** | Hold PC | **PC ← PC_in** |
+| **PCWriteCond** | No branch | Cond. branch (uses `Zero/Bne`) |
+| **ExtSel** | **Zero-extend** imm | **Sign-extend** imm |
+| **MemHalf** | Word access | Half-word (`lhu`) |
+| **Bne** | Compare equal | Compare **not** equal |
+| **Jal** | Normal WB | `$ra ← PC+4`, jump |
+| **A_Load** | Hold A | `A ← Reg[rs]` |
+| **B_Load** | Hold B | `B ← Reg[rt]` |
 
----
+### 2-bit Signals
 
-### 2-bit Control Signals
-
-| Signal | Bits | Action |
-|--------|------|--------|
-| **ALUOp** | `00` | ALU = **add** (for `lw`, `sw`, `addi…`) |
-|           | `01` | ALU = **sub** (for `beq/bne` compare) |
-|           | `10` | Function field (`funct[5:0]`) decides ALU op (R-type) |
-|           | `11` | Force **SLTIU** compare (unsigned) |
-| **ALUSrcB** | `00` | ALU input-B = **B** register |
-|             | `01` | ALU input-B = **4** (PC+4 increment) |
-|             | `10` | ALU input-B = sign/zero-extended **imm** |
-|             | `11` | ALU input-B = sign/zero-extended imm **<< 2** (branch offset) |
-| **PCSource** | `00` | PC input = **ALUOut** (`PC+4`) |
-|              | `01` | PC input = **ALUOut** (`BranchTarget`) |
-|              | `10` | PC input = **JumpAddr** (`{PC[31:28], instr[25:0]<<2}`) |
-
-
-The CPU walks through **13 states (0 → 12)**.
-
-| State Name | # | Purpose / Action | Control signals asserted (`1` unless noted) |
-|------------|---|------------------|---------------------------------------------|
-| **FETCH** | 0  | Fetch instruction from memory, PC ← PC+4 | `MemRead  IRWrite  PCWrite` / `ALUSrcA=0` `ALUSrcB=01` `ALUOp=00` `PCSource=00` |
-| **DECODE** | 1  | Decode, sign/zero-extend imm, load **A/B** regs | `ALUSrcA=0` `ALUSrcB=11` `ALUOp=00` `A_Load  B_Load` + `ExtSel=0` (*sltiu*) or `1` |
-| **MEM_ADDR** | 2 | Compute address for `lw / lhu / sw` | `ALUSrcA` `ALUSrcB=10` `ALUOp=00` |
-| **MEM_READ** | 3 | Read data memory (`lw / lhu`) | `MemRead  IorD` + `MemHalf` (*only if lhu*) |
-| **MEM_WRITEBACK** | 4 | Write loaded word/half to RegFile | `RegWrite  MemtoReg` (`RegDst=0`) |
-| **MEM_WRITE** | 5 | Store word/half (`sw`) to memory| `MemWrite  IorD` |
-| **EXECUTE** | 6 | R-type ALU op (`add, sub, and, or, slt, srl`) | `ALUSrcA` `ALUSrcB=00` `ALUOp=10` |
-| **ALU_WRITEBACK** | 7 | Write ALU result to RegFile (R-type) | `RegDst=1  RegWrite` |
-| **BRANCH** | 8 | Evaluate `beq / bne`, conditionally PC ← BranchTarget | `ALUSrcA` `ALUSrcB=00` `ALUOp=01` `PCSource=01` `PCWriteCond` (`Bne` if `bne`) |
-| **JUMP** | 9 | Unconditional jump (`j`) | `PCWrite` `PCSource=10` |
-| **JAL_WRITE_RA** | 10 | `$ra` ← PC+4, then jump (`jal`) | `Jal  RegWrite  PCWrite  PCSource=10` |
-| **SLTIU_EXECUTE** | 11 | Unsigned compare (`sltiu`) | `ALUSrcA` `ALUSrcB=10` `ALUOp=11` |
-| **SLTIU_WRITEBACK** | 12 | Write result of `sltiu` | `RegWrite` (`RegDst=0`) |
-
-
-
-
+| Signal | 00 | 01 | 10 | 11 |
+|--------|----|----|----|----|
+| **ALUOp** | **add** | **sub** | Use `funct` (R-type) | **SLTIU** compare |
+| **ALUSrcB** | `B` | **4** | **imm** | `imm << 2` |
+| **PCSource** | `ALUOut` (PC+4) | `ALUOut` (branch target) | Jump addr |
 
 ---
 
-## 🔦 Quick Demo (see it run!)
+## 🧩 State-by-State Control Matrix (13 States)
 
-> Needs **Icarus Verilog** or **ModelSim** / **Vivado** – pick one.
+| # | State | Purpose / Action | Signals asserted |
+|---|-------|------------------|------------------|
+| 0 | **FETCH** | Fetch instr, PC+4 | `MemRead IRWrite PCWrite`, `ALUSrcB=01 ALUOp=00 PCSource=00` |
+| 1 | **DECODE** | Decode, extend imm, load A/B | `ALUSrcB=11 ALUOp=00 A_Load B_Load`, `ExtSel=0` (only for `sltiu`) |
+| 2 | **MEM_ADDR** | Addr calc for `lw/lhu/sw` | `ALUSrcA ALUSrcB=10 ALUOp=00` |
+| 3 | **MEM_READ** | Read data (`lw/lhu`) | `MemRead IorD`, `MemHalf` *(if lhu)* |
+| 4 | **MEM_WB** | WB loaded data | `RegWrite MemtoReg` |
+| 5 | **MEM_WRITE** | Store word/half (`sw`) | `MemWrite IorD` |
+| 6 | **EXECUTE** | R-type ALU op | `ALUSrcA ALUSrcB=00 ALUOp=10` |
+| 7 | **ALU_WB** | WB ALU result (R-type) | `RegDst RegWrite` |
+| 8 | **BRANCH** | `beq/bne` compare | `ALUSrcA ALUSrcB=00 ALUOp=01 PCSource=01 PCWriteCond`, `Bne` *(if bne)* |
+| 9 | **JUMP** | Jump (`j`) | `PCWrite PCSource=10` |
+| 10 | **JAL_WB** | `$ra` ← PC+4, jump | `Jal RegWrite PCWrite PCSource=10` |
+| 11 | **SLTIU_EXE** | Unsigned compare | `ALUSrcA ALUSrcB=10 ALUOp=11` |
+| 12 | **SLTIU_WB** | WB result of `sltiu` | `RegWrite` |
+
+---
+
+## 🔧 Running the Testbench
 
 ```bash
-# inside repo
-iverilog -g2012 -o run.vvp src/*.v tb/multi_cycle_processor_tb.v
-vvp run.vvp
+# Icarus example
+iverilog -g2012 -o build/run.vvp src/*.v tb/multi_cycle_processor_tb.v
+vvp build/run.vvp
