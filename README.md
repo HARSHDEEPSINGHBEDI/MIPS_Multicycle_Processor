@@ -23,6 +23,9 @@ Welcome!  This project shows how a classic 32-bit **MIPS -Multicycle-Processor**
 
 ![Multicycle Datapath](docs/img/datatapath.png)
 
+
+
+
 *Blue* lines are data.  
 *Orange* arrows are control signals.  
 Because we re-use parts, the same ALU adds, subtracts, shifts, etc., one state at a time.
