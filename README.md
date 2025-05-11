@@ -2,6 +2,7 @@
 
 Welcome!   
 This is Harshdeep Singh
+
 This project shows how a classic 32-bit **MIPS -Multicycle-Processor**
 
 ---
@@ -29,19 +30,12 @@ This project shows how a classic 32-bit **MIPS -Multicycle-Processor**
 
 *Blue* lines are data.  
 *Orange* arrows are control signals.  
-Because we re-use parts, the same ALU adds, subtracts, shifts, etc., one state at a time.
+
 
 ### 2.  Control FSM (the brain)
 
 ![Control FSM](docs/img/control_fsm.png)
 
-The CPU walks through **14 states (0 to 13)**.  
-Each state turns on a small set of control lines so just the right thing happens.
-
-## 🧩 State-by-State Control-Signal Matrix
-
-> `x` = “don’t-care” / stays **0**  
-> *ALUSrcB and PCSource show the 2-bit value in parentheses.*
 
 ## 🎛️ Control-Signal Reference
 
