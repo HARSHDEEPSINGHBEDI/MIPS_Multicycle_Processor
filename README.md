@@ -1,7 +1,7 @@
 # MIPS Multicycle Processor – Easy Guide 👋
 
-Welcome!  This project shows how a classic 32-bit **MIPS** CPU can be built with **just one ALU and one memory port** by doing the work in **14 small steps (states)** instead of one giant step.  
-Everything is written in clean Verilog and comes with an automatic testbench.
+Welcome!  This project shows how a classic 32-bit **MIPS -Multicycle-Processor** 
+
 
 ---
 
