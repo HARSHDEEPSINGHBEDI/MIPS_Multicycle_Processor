@@ -1,4 +1,4 @@
-# MIPS Multicycle Processor – Easy Guide 👋
+# MIPS Multicycle Processor – Harshdeep Singh
 
 Welcome!  
 I’m **Harshdeep Singh**, and this repo demonstrates a 32-bit **MIPS Multicycle Processor**—one ALU, one memory port, 13 control states.
