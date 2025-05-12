@@ -60,9 +60,13 @@ MIPS_Multicycle/
 
 ### Multicycle Datapath
 
+![Multicycle Datapath](docs/img/datapath.png)
+
 Blue arrows = data flow | Orange arrows = control signals
 
 ### Control FSM
+
+![Control FSM](docs/img/control_fsm.png)
 
 Walks through **13 states** (0–12), asserting only the needed control signals each cycle.
 
