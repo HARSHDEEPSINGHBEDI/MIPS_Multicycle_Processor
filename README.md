@@ -60,7 +60,7 @@ MIPS_Multicycle/
 
 ### Multicycle Datapath
 
-![Multicycle Datapath](docs/img/datapath.png)
+![Multicycle Datapath](docs/img/datatapath.png)
 
 Blue arrows = data flow | Orange arrows = control signals
 
