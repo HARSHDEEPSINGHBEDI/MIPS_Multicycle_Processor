@@ -64,11 +64,15 @@ MIPS_Multicycle/
 
 Blue arrows = data flow | Orange arrows = control signals
 
+
+
 ### Control FSM
 
 ![Control FSM](docs/img/control_fsm.png)
 
 Walks through **13 states** (0–12), asserting only the needed control signals each cycle.
+
+
 
 ### 🧩 FSM State Control Matrix
 
@@ -92,7 +96,10 @@ Walks through **13 states** (0–12), asserting only the needed control signals 
 
 ## 🎛️ Control-Signals Used
 
+
+
 ### 1-bit Signals
+
 
 | Signal       | **0** Description                         | **1** Description                                           |
 |--------------|-------------------------------------------|-------------------------------------------------------------|
@@ -113,7 +120,9 @@ Walks through **13 states** (0–12), asserting only the needed control signals 
 | **A_Load**   | Hold previous A                           | Latch `A ← Reg[rs]`                                         |
 | **B_Load**   | Hold previous B                           | Latch `B ← Reg[rt]`                                         |
 
+
 ### 2-bit Signals
+
 
 | Signal      | **00**                                    | **01**                           | **10**                                | **11**                       |
 |-------------|-------------------------------------------|----------------------------------|---------------------------------------|------------------------------|
@@ -121,7 +130,10 @@ Walks through **13 states** (0–12), asserting only the needed control signals 
 | **ALUSrcB** | ALU B input = B register                  | ALU B input = constant `4`       | ALU B input = sign/zero-extended imm  | ALU B input = imm << 2 (branch) |
 | **PCSource**| PC_in = `ALUOut` (PC+4)                   | PC_in = `ALUOut` (branch target) | PC_in = jump address `{PC[31:28],instr<<2}` | —                            |
 
+
+
 ## 🛠️ Module Descriptions
+
 
 Below is a brief overview of each Verilog module in the `src/` directory:
 
@@ -213,6 +225,7 @@ Below is a brief overview of each Verilog module in the `src/` directory:
 
 
 ## 📝 Sample Program & Testbench
+
 
 ### Instruction file: `tb/program.mem`
 
