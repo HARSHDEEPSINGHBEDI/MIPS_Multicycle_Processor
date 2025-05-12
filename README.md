@@ -70,6 +70,26 @@ Blue arrows = data flow | Orange arrows = control signals
 
 Walks through **13 states** (0–12), asserting only the needed control signals each cycle.
 
+### 🧩 FSM State Control Matrix
+
+| #  | State            | Purpose / Action                                 | Signals asserted                                                                                         |
+|----|------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| 0  | **FETCH**        | Fetch instruction, compute PC+4                  | `MemRead=1`, `IRWrite=1`, `PCWrite=1`, **ALUSrcA=0**, **ALUSrcB=01**, **ALUOp=00**, **PCSource=00**      |
+| 1  | **DECODE**       | Decode, extend imm, latch A/B                    | `A_Load=1`, `B_Load=1`, **ALUSrcA=0**, **ALUSrcB=11**, **ALUOp=00**, `ExtSel=0` (only for `sltiu`)     |
+| 2  | **MEM_ADDR**     | Compute address for `lw`/`sw`/`lhu`              | **ALUSrcA=1**, **ALUSrcB=10**, **ALUOp=00**                                                               |
+| 3  | **MEM_READ**     | Read data (`lw`/`lhu`)                           | `MemRead=1`, `IorD=1`, `MemHalf=1` (if `lhu`)                                                            |
+| 4  | **MEM_WB**       | Write loaded data back to RF                     | `RegWrite=1`, `MemtoReg=1`, `RegDst=0`                                                                   |
+| 5  | **MEM_WRITE**    | Store register data to memory (`sw`)             | `MemWrite=1`, `IorD=1`                                                                                   |
+| 6  | **EXECUTE**      | Perform ALU op for R-type                        | **ALUSrcA=1**, **ALUSrcB=00**, **ALUOp=10**                                                               |
+| 7  | **ALU_WB**       | Write ALU result back to RF (R-type)             | `RegDst=1`, `RegWrite=1`, `MemtoReg=0`                                                                   |
+| 8  | **BRANCH**       | Evaluate `beq`/`bne`, conditionally update PC    | **ALUSrcA=1**, **ALUSrcB=00**, **ALUOp=01**, **PCSource=01**, `PCWriteCond=1`, `Bne=1` (if `bne`)           |
+| 9  | **JUMP**         | Unconditional jump (`j`)                         | `PCWrite=1`, **PCSource=10**                                                                             |
+| 10 | **JAL_WRITE_RA** | `$ra ← PC+4`, then jump (`jal`)                  | `Jal=1`, `RegWrite=1`, `PCWrite=1`, **PCSource=10**                                                       |
+| 11 | **SLTIU_EXEC**   | Perform unsigned compare (`sltiu`)               | **ALUSrcA=1**, **ALUSrcB=10**, **ALUOp=11**                                                               |
+| 12 | **SLTIU_WB**     | Write `sltiu` result back to RF                  | `RegWrite=1`, `MemtoReg=0`, `RegDst=0`                                                                   |
+
+
+
 ## 🎛️ Control-Signals Used
 
 ### 1-bit Signals
@@ -101,23 +121,95 @@ Walks through **13 states** (0–12), asserting only the needed control signals 
 | **ALUSrcB** | ALU B input = B register                  | ALU B input = constant `4`       | ALU B input = sign/zero-extended imm  | ALU B input = imm << 2 (branch) |
 | **PCSource**| PC_in = `ALUOut` (PC+4)                   | PC_in = `ALUOut` (branch target) | PC_in = jump address `{PC[31:28],instr<<2}` | —                            |
 
-### 🧩 FSM State Control Matrix
+## 🛠️ Module Descriptions
 
-| #  | State            | Purpose / Action                                 | Signals asserted                                                                                         |
-|----|------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| 0  | **FETCH**        | Fetch instruction, compute PC+4                  | `MemRead=1`, `IRWrite=1`, `PCWrite=1`, **ALUSrcA=0**, **ALUSrcB=01**, **ALUOp=00**, **PCSource=00**      |
-| 1  | **DECODE**       | Decode, extend imm, latch A/B                    | `A_Load=1`, `B_Load=1`, **ALUSrcA=0**, **ALUSrcB=11**, **ALUOp=00**, `ExtSel=0` (only for `sltiu`)     |
-| 2  | **MEM_ADDR**     | Compute address for `lw`/`sw`/`lhu`              | **ALUSrcA=1**, **ALUSrcB=10**, **ALUOp=00**                                                               |
-| 3  | **MEM_READ**     | Read data (`lw`/`lhu`)                           | `MemRead=1`, `IorD=1`, `MemHalf=1` (if `lhu`)                                                            |
-| 4  | **MEM_WB**       | Write loaded data back to RF                     | `RegWrite=1`, `MemtoReg=1`, `RegDst=0`                                                                   |
-| 5  | **MEM_WRITE**    | Store register data to memory (`sw`)             | `MemWrite=1`, `IorD=1`                                                                                   |
-| 6  | **EXECUTE**      | Perform ALU op for R-type                        | **ALUSrcA=1**, **ALUSrcB=00**, **ALUOp=10**                                                               |
-| 7  | **ALU_WB**       | Write ALU result back to RF (R-type)             | `RegDst=1`, `RegWrite=1`, `MemtoReg=0`                                                                   |
-| 8  | **BRANCH**       | Evaluate `beq`/`bne`, conditionally update PC    | **ALUSrcA=1**, **ALUSrcB=00**, **ALUOp=01**, **PCSource=01**, `PCWriteCond=1`, `Bne=1` (if `bne`)           |
-| 9  | **JUMP**         | Unconditional jump (`j`)                         | `PCWrite=1`, **PCSource=10**                                                                             |
-| 10 | **JAL_WRITE_RA** | `$ra ← PC+4`, then jump (`jal`)                  | `Jal=1`, `RegWrite=1`, `PCWrite=1`, **PCSource=10**                                                       |
-| 11 | **SLTIU_EXEC**   | Perform unsigned compare (`sltiu`)               | **ALUSrcA=1**, **ALUSrcB=10**, **ALUOp=11**                                                               |
-| 12 | **SLTIU_WB**     | Write `sltiu` result back to RF                  | `RegWrite=1`, `MemtoReg=0`, `RegDst=0`                                                                   |
+Below is a brief overview of each Verilog module in the `src/` directory:
+
+- **PC (`pc.v`)**  
+  Program Counter register. On each clock edge (when `PCWrite` is asserted), loads the next PC value (`pc_in`).
+
+- **ADDR_MUX (`mux_pc_alu.v`)**  
+  Selects the memory address input between the PC (for instruction fetch) and `ALUOut` (for data accesses) under control of `IorD`.
+
+- **MEM (`memory.v`)**  
+  Unified 256×32-bit instruction/data memory plus `mem_mode` support.  
+  - On a read (`MemRead=1`), outputs a full word or zero-extended half-word.  
+  - On a write (`MemWrite=1`), stores a full word.
+
+- **instr_reg (`IR.v`)**  
+  Instruction Register. Latches the 32-bit instruction fetched from memory when `IRWrite=1`.
+
+- **MDR_reg (`MDR.v`)**  
+  Memory Data Register. Latches data read from memory (the MDR) for use in write-back stages.
+
+- **REGFILE (`reg_file.v`)**  
+  32×32 register file with two asynchronous read ports (`rs`, `rt`) and one synchronous write port (`write_reg`, `write_data`) gated by `RegWrite`.
+
+- **A_register (`A_reg.v`)**  
+  Pipeline register that latches `read_data1` (the `rs` operand) when `A_Load=1`. Feeds `ALUSrcA` mux.
+
+- **B_register (`B_reg.v`)**  
+  Pipeline register that latches `read_data2` (the `rt` operand) when `B_Load=1`. Feeds `ALUSrcB` mux.
+
+- **SE (`sign_ext.v`)**  
+  Sign/zero-extender. Takes a 16-bit immediate and, under `ExtSel`, either sign-extends or zero-extends it to 32 bits.
+
+- **SHIFT_BRANCH (`shift_left_2.v`)**  
+  Shifts the sign/zero-extended immediate left by 2 bits to form the branch offset.
+
+- **SHIFT_JUMP (`shift_left_2_jump.v`)**  
+  Shifts the 26-bit jump target field left by 2 bits to form the 28-bit jump address portion.
+
+- **ALU_SRC_A_MUX (`alusrcA_mux.v`)**  
+  Selects ALU operand A between the PC (for `PC+4`) and the A register via `ALUSrcA`.
+
+- **ALU_SRC_B_MUX (`alusrb_mux.v`)**  
+  Selects ALU operand B among:
+  1. B register  
+  2. Constant 4 (`PC+4`)  
+  3. Extended immediate  
+  4. Shifted immediate (`imm << 2`)  
+  controlled by the 2-bit `ALUSrcB`.
+
+- **ALU_CTRL (`alu_control.v`)**  
+  ALU control decoder. Maps the 2-bit `ALUOp` and (for R-type) the 6-bit `funct` field to a 3-bit `ALU_control` code.
+
+- **ALU (`alu.v`)**  
+  Core arithmetic/logic unit. Performs:
+  - ADD, SUB  
+  - AND, OR  
+  - SLT (signed), SLTIU (unsigned)  
+  - SRL (logical shift right)  
+
+- **ALU_OUT_REG (`alu_out_reg.v`)**  
+  Pipeline register that latches the ALU result (`ALUOut`) for use in memory addressing or write-back.
+
+- **REGDST_MUX (`regdst_mux.v`)**  
+  Chooses the destination register field for write-back:
+  - `rt` (I-type)  
+  - `rd` (R-type)  
+  - `$ra` (register 31) when `Jal=1`.
+
+- **MEMTOREG_MUX (`memtoreg_mux.v`)**  
+  Selects write-back data:
+  - `ALUOut` (most instructions)  
+  - `MDR` (load instructions)  
+  - `PC+4` (for `jal`).
+
+- **PC_SRC_MUX (`pc_source_mux.v`)**  
+  Selects the next PC source:
+  - `ALUOut` (PC+4)  
+  - Branch target  
+  - Jump address  
+  under the 2-bit `PCSource`.
+
+- **FSM (`control_fsm.v`)**  
+  The finite-state machine that sequences through 13 micro-cycles (states 0–12), decoding the opcode/zero flag and asserting all control signals (`MemRead`, `IRWrite`, `ALUSrcA`, `PCWrite`, etc.) for each state.
+
+---
+
+<sub>All modules in `src/` are instantiated in `multi_cycle_processor.v` to build the top-level datapath + control. The testbench `tb/multi_cycle_processor_tb.v` drives the clock/reset, preloads registers/memory, and logs each instruction’s completion.</sub>
+
 
 
 ## 📝 Sample Program & Testbench
